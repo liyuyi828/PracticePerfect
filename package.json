@@ -1,0 +1,26 @@
+{
+  "name": "practice_perfect",
+  "version": "1.0.0",
+  "description": "practice algorithm and data structure in JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liyuyi828/PracticePerfect.git"
+  },
+  "keywords": [
+    "algorithm"
+  ],
+  "author": "Yuyi Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liyuyi828/PracticePerfect/issues"
+  },
+  "homepage": "https://github.com/liyuyi828/PracticePerfect#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
