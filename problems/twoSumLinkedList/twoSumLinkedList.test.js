@@ -32,13 +32,13 @@ describe('twoSumLinkedList', () => {
   });
 
   it('should return the correct value of the sum', () => {
-    assert.equal(list1.val, 7); 
+    assert.equal(list1.val, 5); 
     assert.equal(list1.next.val, 7);
-    assert.equal(list1.next.next.val, 7);
-    assert.equal(list2.val, 1);
-    assert.equal(list2.next.val, 1);
-    assert.equal(list2.next.next.val, 1);
-    assert.equal(list2.next.next.next.val, 0);
+    assert.equal(list1.next.next.val, 9);
+    assert.equal(list2.val, 8);
+    assert.equal(list2.next.val, 0);
+    assert.equal(list2.next.next.val, 3);
+    assert.equal(list2.next.next.next.val, 1);
   })
 
 });

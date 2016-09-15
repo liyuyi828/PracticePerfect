@@ -2,7 +2,8 @@
 
 // You are given two linked lists representing two non-negative numbers. 
 // The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
-// Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+// Input: (2 -> 4 -> 3)
+//      + (5 -> 6 -> 4)
 // Output: 7 -> 0 -> 8
 
 // var node1 = new ListNode(1);
@@ -21,9 +22,9 @@
 // node7.next = node8;
 // node8.next = node9; //node7 is a list (7 -> 8 -> 9) now
 
-//var a = twoSumLinkedList(node1, node4); // (1 -> 2 -> 3) + R(4 -> 5 -> 6) return (7 -> 7 -> 7)
+//var a = twoSumLinkedList(node1, node4); // (1 -> 2 -> 3) + (4 -> 5 -> 6) return (5 -> 7 -> 9)
 //console.log(a.val, a.next.val, a.next.next.val);
-//var b = twoSumLinkedList(node1, node7); // (1 -> 2 -> 3) + R(7 -> 8 -> 9) => (1 -> 1 -> 1 -> 0)
+//var b = twoSumLinkedList(node1, node7); // (1 -> 2 -> 3) + (7 -> 8 -> 9) => (8 -> 0 -> 3 -> 1)
 //console.log(b.val, b.next.val, b.next.next.val, b.next.next.next.val);
 
 // You can assume both list are the same length
