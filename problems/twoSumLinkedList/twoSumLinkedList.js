@@ -31,7 +31,30 @@
 
 const twoSumLinkedList = (list1, list2) => {
   //Your code here
-
+  let node1 = list1; 
+  let node2 = list2;
+  let previous = 0; 
+  let node, currentNode, sum;  
+  while(node1 || node2){
+    let val1 = node1 ? node1.val : 0; 
+    let val2 = node2 ? node2.val : 0; 
+    sum = val1 + val2 + previous;
+    let newNode = new ListNode(sum % 10); 
+    if(!node){ 
+      node = newNode;
+    } else {
+      currentNode.next = newNode;
+    }
+    currentNode = newNode;
+    if (node1) { node1 = node1.next; }
+    if (node2) { node2 = node2.next; }
+    previous = Math.floor(sum / 10); 
+  }
+  if(previous){
+    let newNode = new ListNode(previous); 
+    currentNode.next = newNode; 
+  }
+  return node; 
 };
 
 //Use for following function to generate a linked list;
