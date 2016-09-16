@@ -9,8 +9,17 @@
 // ** You can assume the input will always be a positive integer
 
 const stairStep = (steps) => {
-  //You solution here:
-
+  //You solution here:  
+  function combination(remain){
+    if(remain < 0 ){
+      return 0; 
+    } else if (remain === 0) {
+      return 1; 
+    } else {
+      return combination(remain - 1) + combination(remain - 2) + combination(remain - 3); 
+    }
+  }
+  return (steps > 0) ? combination(steps) : 0; 
 }
 
 module.exports = { stairStep }; 
