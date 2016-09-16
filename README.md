@@ -1,5 +1,5 @@
 # PracticePerfect
-A collection of interesting coding problem to practice algorithim and data sturcture. 
+A collection of interesting coding problems to practice algorithim and data sturcture. 
 
 Source of individual problems, if known, will be included in the prompt.
 
@@ -11,6 +11,8 @@ Source of individual problems, if known, will be included in the prompt.
 If you think any test case were missing, please submit a pull request with additional test on the appropiate test file, I will merge it.
 
 ## Solution: 
-I have list my solution for a particular problem on `Yuyi-solution` branch, with brief explaination. Those are my solutions for my first try of the problems, and definitely not the best. If you have any quesiton / comment / suggestion regarding the solution, please let me know.
+I have listed my solution for a particular problem on `Yuyi-solution` branch, with brief explaination. Those are my solutions for my first try of the problems, and definitely not the best. 
+
+If you have any `quesiton | comment | suggestion` regarding this repo, please let me know.
 
 Thank you. Happy Coding!
