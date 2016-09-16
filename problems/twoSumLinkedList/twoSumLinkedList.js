@@ -1,10 +1,10 @@
 //Source: LeetCode (https://leetcode.com/problems/add-two-numbers/)
 
-// You are given two linked lists representing two non-negative numbers. 
+// You are given two linked lists representing two non-negative intergers. 
 // The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
-// Input: (2 -> 4 -> 3)
-//      + (5 -> 6 -> 4)
-// Output: 7 -> 0 -> 8
+// Input: (2 -> 3 -> 4)
+//      + (2 -> 3 -> 4)
+// Output: 4 -> 6 -> 8
 
 // var node1 = new ListNode(1);
 // var node2 = new ListNode(2);
@@ -31,7 +31,7 @@
 
 const twoSumLinkedList = (list1, list2) => {
   //Your code here
-  
+
 };
 
 //Use for following function to generate a linked list;
