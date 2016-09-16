@@ -27,12 +27,11 @@
 //var b = twoSumLinkedList(node1, node7); // (1 -> 2 -> 3) + (7 -> 8 -> 9) => (8 -> 0 -> 3 -> 1)
 //console.log(b.val, b.next.val, b.next.next.val, b.next.next.next.val);
 
-// You can assume both list are the same length
-// list2 is the list in reverse order
-// Advanced: handle list in different length, and write your own test
+// Note: please handle any positive integers, ie lists in different length, and write your own test
 
 const twoSumLinkedList = (list1, list2) => {
   //Your code here
+  
 };
 
 //Use for following function to generate a linked list;

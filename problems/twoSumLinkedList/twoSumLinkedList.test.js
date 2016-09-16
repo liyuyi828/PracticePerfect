@@ -39,7 +39,17 @@ describe('twoSumLinkedList', () => {
     assert.equal(list2.next.val, 0);
     assert.equal(list2.next.next.val, 3);
     assert.equal(list2.next.next.next.val, 1);
-  })
+  });
+
+  it('should handle input lists of different length', () => {
+    let node10 = new ListNode(1); 
+    node10.next = node1; //node10 is a list (1 -> 1 -> 2 -> 3) now 
+    let list3 = twoSumLinkedList(node4, node10);
+    assert.equal(list3.val, 5);
+    assert.equal(list3.next.val, 6);
+    assert.equal(list3.next.next.val, 8);
+    assert.equal(list3.next.next.next.val, 3);
+  });
 
 });
 
