@@ -1,7 +1,7 @@
 const longestPalindromeSubstring = require('./longestPalindromeSubstring.js').longestPalindromeSubstring;
 const assert = require ('chai').assert;
 
-describe('stairStep', () => {
+describe('longestPalindromeSubstring', () => {
 
   it('should return a string', () => {
     assert.equal(typeof longestPalindromeSubstring('aba'), 'string');

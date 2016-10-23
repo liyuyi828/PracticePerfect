@@ -1,7 +1,7 @@
 const maxOnesWithFlips = require('./maxOnesWithFlips.js').maxOnesWithFlips;
 const assert = require ('chai').assert;
 
-describe('stairStep', () => {
+describe('maxOnesWithFlips', () => {
   
   it('should return a number', () => {
     assert.equal(typeof maxOnesWithFlips([1, 0], 1), 'number');
