@@ -1,7 +1,8 @@
 [
   // './stairStep/stairStep.test.js',
   // './longestPalindromeSubstring/longestPalindromeSubstring.test.js',
-  './twoSumLinkedList/twoSumLinkedList.test.js',
+  // './twoSumLinkedList/twoSumLinkedList.test.js',
+  './maxOnesWithFlips/maxOnesWithFlips.test.js',
 ].forEach(function(test) {
   require(test);
 });
