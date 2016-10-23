@@ -10,7 +10,23 @@
 
 const maxOnesWithFlips = (arr, flips) => {
   // Your solution here
-
+  var start = 0;
+  var zeros = [];
+  var zeroIndex = 0;
+  var max = 0; ;
+  for(var i = 0; i < arr.length; i++){
+    if(arr[i] === 0){
+      zeros.push(i);
+      if(zeros.length > flips){
+        start = zeros[zeroIndex] + 1; 
+        zeroIndex++;
+      }
+    }
+    if(i + 1 - start > max ){
+      max = i + 1 - start; 
+    }
+  }
+  return max;
 }
 
 module.exports = { maxOnesWithFlips };
