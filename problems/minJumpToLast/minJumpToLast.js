@@ -13,7 +13,20 @@
 // Can you optimized it? 
  
 const minJumpToLast = (arr) => {
-  // Your solution here 
+  // Your solution here
+  var steps = [0];
+  var len = arr.length;
+  for(var i = 0; i < len; i++){
+    for(var j = 1; j <= arr[i]; j++){
+      if(steps[i+j] === undefined){
+        steps[i+j] = steps[i] + 1; 
+      } else {
+        steps[i+j] = Math.min(steps[i] + 1, steps[i+j]);
+      }
+    }
+  }
+  console.log(steps);
+  return steps[len - 1] 
 }
 
 module.exports = { minJumpToLast };
