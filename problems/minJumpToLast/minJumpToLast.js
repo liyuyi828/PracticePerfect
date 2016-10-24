@@ -25,7 +25,6 @@ const minJumpToLast = (arr) => {
       }
     }
   }
-  console.log(steps);
   return steps[len - 1] 
 }
 
