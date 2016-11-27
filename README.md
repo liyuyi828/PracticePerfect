@@ -11,7 +11,8 @@ Source of individual problems, if known, will be included in the prompt.
 If you think any test case were missing, please submit a pull request with additional test on the appropiate test file, I will merge it.
 
 ## Solution: 
-I have listed my solution for a particular problem on `Yuyi-solution` branch, with brief explaination. Those are my solutions for my first try of the problems, and definitely not the best. 
+I have listed my solution for a particular problem on `Yuyi-solution` branch, with brief explaination. Those are my solutions for my first try of the problems, and definitely not the best.
+* For "Cracking the Coding Interview", problem and solution will be presented, and testing is not available. Please see the original book for more details.
 
 If you have any `quesiton | comment | suggestion` regarding this repo, please let me know.
 
