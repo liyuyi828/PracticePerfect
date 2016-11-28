@@ -3,7 +3,7 @@
 // What is you cannot use additional data structure? 
 
 // we can use an JS object or use Map() in ES6
-const isUnique = (str) => {
+const isUnique = str => {
   let tracker = new Map();
   for(var i=0; i < str.length; i++){
     if(tracker.get(str[i])){
@@ -57,4 +57,79 @@ const isPermutation = (str1, str2) => {
 // Write a method to replace all spaces in a string with "%20". You may assume
 // that the string has sufficient space at the end to hold the additional characers, 
 // and that you are given the "true" length of the string.
+const URLify = (str, len) => {
+  return str.slice(0, len).split(' ').join('%20'); 
+}
+// console.log(URLify("Mr John Smith    ", 13));
 
+// 1.4: Palindrom Permutaion
+// Given a String, write a function to check if it is a permutation of a palindrome
+// A palindrom is a word or phrase that is the same forward and backwards.
+// A permutation is a rearrangement of letters. The palindrom does not need to b limited
+// to just disctinary words
+
+// Note: in the CTCI books, it use "Tact Coa" as example and return true;
+//        I assume it we could ignore "space" and "case" for the implementation
+const palindromePermutation = str => {
+  let strWithoutSpace = str.split(' ').map(e => e.toLowerCase()).join('');
+  let map = stringToMap(strWithoutSpace);
+  let oddCount = 0; 
+  for(let [key, value] of map){
+    if(value % 2 !== 0){
+      oddCount++; 
+    }
+  }
+  return oddCount <= 1; 
+
+  function stringToMap(str){
+    let map = new Map();
+    let key, curr 
+    for(let i = 0; i < str.length; i++){
+      key = str[i]; 
+      curr = map.get(key); 
+      if(curr){
+        map.set(key, curr + 1); 
+      } else {
+        map.set(key, 1); 
+      }
+    }
+    return map; 
+  }
+}
+// console.log(palindromePermutation("This is free land America"));
+// console.log(palindromePermutation("Tact Coa"));
+
+// 1.5: One Way
+// There are three types of edits tht can be performed on strings:
+// Insert a character, remove a character, or replace a character, 
+// write a function to check if two string is one edit(or less) away
+const oneEditAway = (str1, str2) => {
+  let len1 = str1.length, len2 = str2.length; 
+  let lenDiff = len1 - len2;  
+  if(lenDiff > 1 || lenDiff < -1){
+    return false; 
+  } else {
+    let diffCount = 0;
+    let diffOffset = lenDiff;
+    let tracker1 = 0; tracker2 = 0;
+    while(tracker1 < len1 && tracker2 < len2){
+      if(str1[tracker1] !== str2[tracker2]){
+        diffCount++;
+        if(diffOffset > 0){
+          tracker2--; 
+          diffOffset = 0; 
+        } else if (diffOffset < 0) {
+          tracker1--; 
+          diffOffset = 0
+        } 
+      }
+      tracker1++; 
+      tracker2++; 
+    }
+    return diffCount <= 1;  
+  }
+}
+// console.log(oneEditAway('pale', 'ple'));
+// console.log(oneEditAway('pales', 'pale'));
+// console.log(oneEditAway('pale', 'bale'));
+// console.log(oneEditAway('pale', 'bake'));
