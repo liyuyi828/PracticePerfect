@@ -133,3 +133,31 @@ const oneEditAway = (str1, str2) => {
 // console.log(oneEditAway('pales', 'pale'));
 // console.log(oneEditAway('pale', 'bale'));
 // console.log(oneEditAway('pale', 'bake'));
+
+// 1.6: String compression
+// Implement a method to perform basic string compression using the counts of repeated characters.
+// For example, the string aabcccccaaa would become a2b1c5a3.
+// If the "compressed" string would not become smaller than the original
+// strings, your method should return the original string. You can assume the string has only uppercse and lowercase letters(a-z)
+
+//Note: base on the last sentense, I am assuming "AAAAAa" would return "a6" for my implementation
+
+const stringCompression = str => {
+  let lowercaseStr = str.toLowerCase(); 
+  let len = str.length;
+  let currChar, nextChar, currCount = 0;
+  let result = '';  
+  for(let i = 0; i < len; i++){
+    currChar = lowercaseStr[i];
+    nextChar = lowercaseStr[i+1]; 
+    currCount++; 
+    if(currChar !== nextChar){
+      result = result + currChar + currCount; 
+      currCount = 0; 
+    }
+  }
+  return result.length < len ? result : str; 
+}
+// console.log(stringCompression('aaabbBbccCddd'));
+// console.log(stringCompression('adabb'));
+
