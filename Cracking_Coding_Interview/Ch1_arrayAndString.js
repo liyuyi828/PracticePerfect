@@ -184,3 +184,32 @@ const rotateMatrix = matrix => {
 }
 // console.log(rotateMatrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
 // console.log(rotateMatrix([[1, 2, 3, 4, 5], [11, 12, 13, 14, 15], [21, 22, 23, 24, 25], [31, 32, 33, 34, 35], [41, 42, 43, 44, 45]]));
+
+// 1.8: Zero Matrix
+// Write an algorithm such that if an element in an M X N matirix is 0, 
+// its entire row and column are set to 0
+
+const zeroMatrix = matrix => {
+  let rowMap = new Map();
+  let colMap = new Map();
+  let row = matrix.length; 
+  let col = matrix[0].length;  
+  for(let i = 0; i < row; i++){
+    for(let j = 0; j < col; j++){
+      if(matrix[i][j] === 0){
+        rowMap.set(i, true);
+        colMap.set(j, true);
+      }
+    }
+  }
+  for(let i = 0; i < row; i++){
+    for(let j = 0; j < col; j++){
+      if(rowMap.get(i) || colMap.get(j) ){
+        matrix[i][j] = 0; 
+      }
+    }
+  }
+  return matrix; 
+}
+// let a = [[1, 5, 6, 6], [2, 3, 4, 0], [1, 3, 5, 6]];
+// console.log(zeroMatrix(a));
