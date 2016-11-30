@@ -161,3 +161,25 @@ const stringCompression = str => {
 // console.log(stringCompression('aaabbBbccCddd'));
 // console.log(stringCompression('adabb'));
 
+// 1.7: Rotate Matrix in-place
+// Given an image representing by an N x N matrix, where each pixel in the image is 4 bytes, 
+// write a method to rotate the image by 90 degrees. Can you do this in place? 
+
+// Note: the following implementation rotate the image counter-clockwise;
+// The clockwise implementation is similar
+const rotateMatrix = matrix => {
+  let len = matrix.length; 
+  let round = 0, temp; 
+  while(round < Math.floor(len / 2)){
+    for(let i = round; i < len - round - 1; i++){
+      temp = matrix[round][i]; 
+      matrix[round][i] = matrix[i][len - round - 1]; 
+      matrix[i][len - round - 1] = matrix[len - round - 1][len - round - i - 1]; 
+      matrix[len - round - 1][len - round - i - 1] = matrix[len - round - i - 1][round];
+      matrix[len - round - i - 1][round] = temp; 
+    }
+    round++; 
+  }
+  return matrix; 
+}
+console.log(rotateMatrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
