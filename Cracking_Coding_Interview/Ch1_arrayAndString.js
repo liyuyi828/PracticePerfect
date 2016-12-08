@@ -3,6 +3,8 @@
 // What is you cannot use additional data structure? 
 
 // we can use an JS object or use Map() in ES6
+
+// Solution: space complexity O(1), time complexity O(n)
 const isUnique = str => {
   let tracker = new Map();
   for(var i=0; i < str.length; i++){
@@ -20,6 +22,7 @@ const isUnique = str => {
 // 1.2: Check Permutation
 // Given two strings, write a method to decide if one is a permuation of the other.
 
+// Solution: space complexity O(n), time complexity O(n)
 const isPermutation = (str1, str2) => {
   if(str1 === str2 || str1.length !== str2.length){
     return false;
@@ -57,6 +60,8 @@ const isPermutation = (str1, str2) => {
 // Write a method to replace all spaces in a string with "%20". You may assume
 // that the string has sufficient space at the end to hold the additional characers, 
 // and that you are given the "true" length of the string.
+
+// Solution: space complexity O(1), time complexity O(n)
 const URLify = (str, len) => {
   return str.slice(0, len).split(' ').join('%20'); 
 }
@@ -70,6 +75,8 @@ const URLify = (str, len) => {
 
 // Note: in the CTCI books, it use "Tact Coa" as example and return true;
 //        I assume it we could ignore "space" and "case" for the implementation
+
+// Solution: space complexity O(1), time complexity O(n)
 const palindromePermutation = str => {
   let strWithoutSpace = str.split(' ').map(e => e.toLowerCase()).join('');
   let map = stringToMap(strWithoutSpace);
@@ -103,6 +110,8 @@ const palindromePermutation = str => {
 // There are three types of edits tht can be performed on strings:
 // Insert a character, remove a character, or replace a character, 
 // write a function to check if two string is one edit(or less) away
+
+// Solution: space complexity O(1), time complexity O(n)
 const oneEditAway = (str1, str2) => {
   let len1 = str1.length, len2 = str2.length; 
   let lenDiff = len1 - len2;  
@@ -142,6 +151,7 @@ const oneEditAway = (str1, str2) => {
 
 //Note: base on the last sentense, I am assuming "AAAAAa" would return "a6" for my implementation
 
+// Solution: space complexity O(1), time complexity O(n)
 const stringCompression = str => {
   let lowercaseStr = str.toLowerCase(); 
   let len = str.length;
@@ -167,6 +177,8 @@ const stringCompression = str => {
 
 // Note: the following implementation rotate the image counter-clockwise;
 // The clockwise implementation is similar
+
+// Solution: space complexity O(1), time complexity O(n) 
 const rotateMatrix = matrix => {
   let len = matrix.length; 
   let round = 0, temp; 
@@ -189,6 +201,7 @@ const rotateMatrix = matrix => {
 // Write an algorithm such that if an element in an M X N matirix is 0, 
 // its entire row and column are set to 0
 
+// Solution: space complexity O(n), time complexity O(n)
 const zeroMatrix = matrix => {
   let rowMap = new Map();
   let colMap = new Map();
