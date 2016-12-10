@@ -226,3 +226,13 @@ const zeroMatrix = matrix => {
 }
 // let a = [[1, 5, 6, 6], [2, 3, 4, 0], [1, 3, 5, 6]];
 // console.log(zeroMatrix(a));
+
+// 1.9: String Rotation 
+// Given you have a isSubstring method to check if one string is subString of another. 
+// Write a method to check if two strings are rotation of each other using one call of isSubstring
+// ie ("waterbottle", "terbottlewa")
+
+const isRotation = (str1, str2) => {
+
+  
+}
