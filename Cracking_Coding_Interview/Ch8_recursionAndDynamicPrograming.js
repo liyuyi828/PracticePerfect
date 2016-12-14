@@ -82,18 +82,48 @@ const magicIndex = arr => {
   return null; 
 }
 
-let indexAtEnd = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 9]; 
-let indexAtMiddle = [-1, 0, 2, 6, 7];
-let noMagicIndex = [1, 2, 3, 4, 5];
-let indexAtEndDup = [-1, -1, -1, -1, -1, -1, -1, 7]; 
-let indexAtMiddleDup = [-1, -1, 0, 3];
-let noMagicIndexDup = [-1, -1, -1, -1, -1];
-console.log(magicIndex(indexAtEnd));
-console.log(magicIndex(indexAtMiddle));
-console.log(magicIndex(noMagicIndex));
-console.log(magicIndex(indexAtEndDup));
-console.log(magicIndex(indexAtMiddleDup));
-console.log(magicIndex(noMagicIndexDup));
-
+// let indexAtEnd = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 9]; 
+// let indexAtMiddle = [-1, 0, 2, 6, 7];
+// let noMagicIndex = [1, 2, 3, 4, 5];
+// let indexAtEndDup = [-1, -1, -1, -1, -1, -1, -1, 7]; 
+// let indexAtMiddleDup = [-1, -1, 0, 3];
+// let noMagicIndexDup = [-1, -1, -1, -1, -1];
+// console.log(magicIndex(indexAtEnd));
+// console.log(magicIndex(indexAtMiddle));
+// console.log(magicIndex(noMagicIndex));
+// console.log(magicIndex(indexAtEndDup));
+// console.log(magicIndex(indexAtMiddleDup));
+// console.log(magicIndex(noMagicIndexDup));
 
 // Follow up, what if the values are not distinct? 
+
+
+// 8.4 Power Set
+// Write a method to return all subsets of a set; 
+
+const powerSet = arr => {
+  let result = [[]];
+  let len = arr.length; 
+  
+  function builtSet(currentIndex){
+    if(currentIndex >= len){
+      return; 
+    }
+    let tempResult = [];
+    let addCurrent; 
+    result.forEach( e => {
+      addCurrent = e.slice()
+      addCurrent.push(arr[currentIndex]);
+      tempResult.push(e); 
+      tempResult.push(addCurrent);
+    })
+    result = tempResult;
+    builtSet(currentIndex+1);
+  }
+  
+  builtSet(0);
+  return result;
+}
+// let set = [1, 2, 3];
+// console.log(powerSet(set));
+
