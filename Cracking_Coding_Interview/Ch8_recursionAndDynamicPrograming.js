@@ -56,5 +56,44 @@ const robotInGrid = grid => {
   console.log(path);
   return (path.length === row + col + 1) ? path : "No viable path found"; 
 } 
-// var grid = [[1, 1, 0], [1, 0, 0], [1, 0, 1]];
+// let grid = [[1, 1, 0, 0], 
+//             [1, 1, 1, 1],
+//             [1, 0, 0, 0], 
+//             [1, 1, 0, 1]];
 // console.log(robotInGrid(grid));
+
+// 8.3 Magic Index
+// A magic index in an array A[0, 1, ..., n - 1 ] is defined to be an index
+// such that A[i] = i, given a sorted aray of distinct intergers,
+// write a method to find a magic index, if one exist, in array A
+
+const magicIndex = arr => {
+  let current = 0;
+  let len = arr.length; 
+  while(current < len){
+    if(arr[current] === current){
+      return current; 
+    } else if (arr[current] < current){
+      current++; 
+    } else {
+      current = arr[current];
+    }
+  }
+  return null; 
+}
+
+let indexAtEnd = [-1, 0, 1, 2, 3, 4, 5, 6, 7, 9]; 
+let indexAtMiddle = [-1, 0, 2, 6, 7];
+let noMagicIndex = [1, 2, 3, 4, 5];
+let indexAtEndDup = [-1, -1, -1, -1, -1, -1, -1, 7]; 
+let indexAtMiddleDup = [-1, -1, 0, 3];
+let noMagicIndexDup = [-1, -1, -1, -1, -1];
+console.log(magicIndex(indexAtEnd));
+console.log(magicIndex(indexAtMiddle));
+console.log(magicIndex(noMagicIndex));
+console.log(magicIndex(indexAtEndDup));
+console.log(magicIndex(indexAtMiddleDup));
+console.log(magicIndex(noMagicIndexDup));
+
+
+// Follow up, what if the values are not distinct? 
