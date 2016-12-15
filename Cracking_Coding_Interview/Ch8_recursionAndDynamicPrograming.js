@@ -127,3 +127,22 @@ const powerSet = arr => {
 // let set = [1, 2, 3];
 // console.log(powerSet(set));
 
+// 8.5 Recursive Multiply
+// Write a recursive function to multiply two positive integers without using the * operator
+// You can use addition, subtraction, and bit shifting, but you should minimize
+// the number of those opeartions
+
+const multiplyRe = (int1, int2) => {
+  let result = 0; 
+  function addRecursively(tracker){
+    if(tracker <= 0){
+      return; 
+    }
+    result += int2; 
+    addRecursively(tracker - 1);
+  }
+  addRecursively(int1);
+  return result; 
+}
+
+console.log(multiplyRe(9, 8));
